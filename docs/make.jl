@@ -14,7 +14,7 @@ makedocs(;
   format = Documenter.HTML(;
     prettyurls = get(ENV, "CI", "false") == "true",
     canonical = "https://JuliaSmoothOptimizers.github.io/JSOTemplate.jl",
-    assets = String[],
+    assets = ["assets/style.css"],
   ),
   pages = [
     "Home" => "index.md",
