@@ -5,6 +5,9 @@ DocMeta.setdocmeta!(JSOTemplate, :DocTestSetup, :(using JSOTemplate); recursive 
 
 makedocs(;
   modules = [JSOTemplate],
+  doctest = true,
+  linkcheck = false,
+  strict = false,
   authors = "Abel Soares Siqueira <abel.s.siqueira@gmail.com> and contributors",
   repo = "https://github.com/JuliaSmoothOptimizers/JSOTemplate.jl/blob/{commit}{path}#{line}",
   sitename = "JSOTemplate.jl",
@@ -13,7 +16,14 @@ makedocs(;
     canonical = "https://JuliaSmoothOptimizers.github.io/JSOTemplate.jl",
     assets = String[],
   ),
-  pages = ["Home" => "index.md"],
+  pages = [
+    "Home" => "index.md",
+    "Reference" => "reference.md",
+  ],
 )
 
-deploydocs(; repo = "github.com/JuliaSmoothOptimizers/JSOTemplate.jl")
+deploydocs(;
+  repo = "github.com/JuliaSmoothOptimizers/JSOTemplate.jl",
+  push_preview = true,
+  devbranch = "main",
+)
