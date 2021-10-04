@@ -16,10 +16,7 @@ makedocs(;
     canonical = "https://JuliaSmoothOptimizers.github.io/JSOTemplate.jl",
     assets = ["assets/style.css"],
   ),
-  pages = [
-    "Home" => "index.md",
-    "Reference" => "reference.md",
-  ],
+  pages = ["Home" => "index.md", "Reference" => "reference.md"],
 )
 
 deploydocs(;
