@@ -16,16 +16,12 @@ This script will help using JSOTemplate by performing the following steps:
 """)
 
 
-files = readdir()
-deleteat!(files, findfirst(files .== ".git"))
-while !all(isfile.(files))
-  idx = findall(.!isfile.(files))
-  for dir in files[idx]
-    append!(files, readdir(dir, join=true))
-  end
-  deleteat!(files, idx)
+files = split(readchomp(`git ls-tree -r main --name-only`), "\n")
+for file ∈ files
+  file_type = readchomp(`file $file`)
+  match(r"text", file_type) === nothing && continue  # skip binary files
+  run(`sed -i "" "s/JSOTemplate/$pkgname/g" "$file"`)
 end
-run(`sed -i "s/JSOTemplate/$pkgname/g" $files`)
 println(green("✓ All occurrences of JSOTemplate should have been changed to $pkgname"))
 
 lines = readlines("Project.toml")
@@ -38,7 +34,7 @@ for line in lines
 end
 new_uuid = string(uuid4())
 files = ["Project.toml", "test/Project.toml", "docs/Project.toml"] |> x -> filter(isfile, x)
-run(`sed -i "s/$uuid/$new_uuid/g" $files`)
+run(`sed -i "" "s/$uuid/$new_uuid/g" $files`)
 println(green("✓ UUID has been updated in $files"))
 
 mv("src/JSOTemplate.jl", "src/$pkgname.jl")
