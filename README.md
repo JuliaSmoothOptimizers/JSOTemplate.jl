@@ -9,7 +9,10 @@
 This is a template/skeleton for JSO packages.
 It should be used for new packages, and as a reference for changes in existing packages.
 
-## Things to change
+## How to use
 
-- Project.toml: name and uuid
-- LICENSE.md: Check if MPL-v2 is the correct choice
+- Click on the button "Use template".
+- Clone.
+- Run `julia run-me.jl` and enter the new package name.
+- Check if MPL-v2 is the correct choice.
+- Update this README.
