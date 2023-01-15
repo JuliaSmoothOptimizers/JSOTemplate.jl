@@ -14,6 +14,8 @@ jobs:
       - uses: julia-actions/julia-buildpkg@v1
       - name: Run the compliance function
         run: |
+          git config --global user.email "bot@jso.com"
+          git config --global user.name "JSOTemplate workflow"
           julia --project -e 'using JSOTemplate; JSOTemplate.template_compliance()'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
