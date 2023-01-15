@@ -3,7 +3,15 @@ uuid = "adf32eb0-fe7e-47bb-93e4-fe96e72f6839"
 authors = ["Abel Soares Siqueira <abel.s.siqueira@gmail.com> and contributors"]
 version = "0.1.0"
 
+[deps]
+Emporium = "4f286ecd-06d3-4492-bdef-0ca090b7d070"
+Formatting = "59287772-0a20-5a39-b81b-1366585eb4c0"
+GitHub = "bc5e4493-9b4d-5f90-b8aa-2b2bcaad7a26"
+
 [compat]
+Emporium = "0.2.2"
+Formatting = "0.4"
+GitHub = "5"
 julia = "1.6"
 
 [extras]
