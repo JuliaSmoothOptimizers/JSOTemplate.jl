@@ -1,0 +1,19 @@
+name: JSOTutorials Compliance
+on:
+  schedule:
+    - cron: 0 0 * * *
+  workflow_dispatch:
+jobs:
+  Compliance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: julia-actions/setup-julia@v1
+        with:
+          version: '1'
+      - uses: julia-actions/julia-buildpkg@v1
+      - name: Run the compliance function
+        run: |
+          julia --project -e 'using JSOTemplate; JSOTemplate.template_compliance()'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
