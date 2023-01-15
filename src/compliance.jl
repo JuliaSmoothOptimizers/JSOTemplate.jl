@@ -23,7 +23,7 @@ function template_compliance()
   # )
   mkdir("cloned_repos")
   cd("cloned_repos") do
-    run(`git clone https://github.com/JuliaSmoothOptimizers/DerivativeFreeSolvers.jl`)
+    run(`git clone https://abelsiqueira@github.com/JuliaSmoothOptimizers/DerivativeFreeSolvers.jl`)
   end
 
   check_and_fix_compliance(
