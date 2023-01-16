@@ -17,4 +17,4 @@ jobs:
           version: '1'
       - name: Aqua.jl
         run: |
-          julia --color=yes -e 'using Pkg; Pkg.add("Aqua"); Pkg.develop(path="."); using Aqua, JSOTemplate; Aqua.test_all(JSOTemplate)'
+          julia --color=yes -e 'using Pkg; Pkg.add("Aqua"); Pkg.develop(path="."); using Aqua, JSOTemplate; Aqua.test_all(JSOTemplate, ambiguities=false); Aqua.test_ambiguities(JSOTemplate)'
