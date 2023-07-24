@@ -27,5 +27,5 @@ jobs:
           git config --global user.name "JSOTemplate workflow"
           julia --project -e 'using JSOTemplate; JSOTemplate.template_compliance(ENV["REPO"])'
         env:
-          GITHUB_TOKEN: ${{ secrets.PAT }}
+          GITHUB_TOKEN: ${{ secrets.JSOTEMPLATE_TOKEN }}
           REPO: ${{ matrix.repo }}
