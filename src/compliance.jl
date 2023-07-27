@@ -28,18 +28,23 @@ function template_compliance(repo)
   end
   owner, pkg = split(repo, "/")
 
-  run(`mkdir -p cloned_repos`)
-  run(`git clone https://github.com/$owner/$pkg cloned_repos/$pkg`)
+  clone_folder = mktempdir()
+  run(`mkdir -p $clone_folder`)
+  @info "Cloning to $clone_folder"
+  run(`git clone https://github.com/$owner/$pkg $clone_folder/$pkg`)
 
   check_and_fix_compliance(
     ".",
     simple_copy_file_list,
-    "cloned_repos",
+    clone_folder,
     auth = auth,
     check_only = false,
     close_older_compliance_prs = true,
+    commit_message = "[skip ci] :bot: Template compliance update",
     create_pr = true,
     owner = owner,
+    pr_title = "[JSOTemplate.jl] Template compliance update",
+    pr_body = "This is an automated PR made from JSOTemplate.jl. If the result is not what you expected, please open an issue or [at] abelsiqueira",
     rename_these_files = renaming,
     template_pkg_name = "JSOTemplate",
   )
