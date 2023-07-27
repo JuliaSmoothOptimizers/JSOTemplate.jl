@@ -9,7 +9,7 @@ Formatting = "59287772-0a20-5a39-b81b-1366585eb4c0"
 GitHub = "bc5e4493-9b4d-5f90-b8aa-2b2bcaad7a26"
 
 [compat]
-Emporium = "0.2.2"
+Emporium = "0.2.4"
 Formatting = "0.4"
 GitHub = "5"
 julia = "1.6"
