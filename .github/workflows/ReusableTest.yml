@@ -1,0 +1,14 @@
+jobs:
+  test-matrix:
+    strategy:
+      fail-fast: false
+      matrix:
+        version: ["lts", "1", "pre"]
+        os: [ubuntu-latest]
+    uses: JuliaSmoothOptimizers/.github/.github/workflows/ReusableTest.yml@main
+    with:
+      version: ${{ matrix.version }}
+      os: ${{ matrix.os }}
+      run_codecov: ${{ matrix.version == '1' }}
+    secrets:
+      codecov_token: ${{ secrets.CODECOV_TOKEN }}

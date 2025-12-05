@@ -1,0 +1,30 @@
+name: Docs
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "docs/**"
+      - "src/**"
+      - "*.toml"
+    tags: ["*"]
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "docs/**"
+      - "src/**"
+      - "*.toml"
+    types: [opened, synchronize, reopened]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ startsWith(github.ref, 'refs/pull/') }}
+
+jobs:
+  docs:
+    uses: JuliaSmoothOptimizers/.github/.github/workflows/Docs.yml@move-scripts-to-github-JSO
+    with:
+      package_name: JSOTemplate
+      docs_project_path: docs

@@ -1,0 +1,11 @@
+name: Copier Update
+
+on:
+  schedule:
+    - cron: "0 7 1/7 * *"  # Every 7 days at 7:00 UTC
+  workflow_dispatch:
+
+jobs:
+  copier:
+    uses: JuliaSmoothOptimizers/.github/.github/workflows/Copier.yml@move-scripts-to-github-JSO
+    # later change to @main once merged

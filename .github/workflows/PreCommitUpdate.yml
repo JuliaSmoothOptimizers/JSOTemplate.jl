@@ -1,0 +1,11 @@
+name: pre-commit Update
+
+on:
+  schedule:
+    - cron: "0 7 1/7 * *" # At 7:00 every 7 days
+  workflow_dispatch:
+
+jobs:
+  pre-commit-update:
+    uses: JuliaSmoothOptimizers/.github/.github/workflows/PreCommitUpdate.yml@move-scripts-to-github-JSO
+    # later: @main

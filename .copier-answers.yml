@@ -1,0 +1,40 @@
+# Changes here will be overwritten by Copier
+AddAllcontributors: true
+AddCitationCFF: true
+AddCodeOfConduct: true
+AddCompatHelperCI: true
+AddContributionDocs: true
+AddCopierCI: true
+AddDependabot: true
+AddDocs: true
+AddDocsCI: true
+AddFormatterAndLinterConfigFiles: true
+AddGitHubPRTemplate: true
+AddGitHubTemplates: true
+AddLintCI: true
+AddLychee: true
+AddMacToCI: true
+AddPrecommit: true
+AddPrecommitUpdateCI: true
+AddTagBotCI: true
+AddTestCI: true
+AddWinToCI: true
+Authors: Abel Soares Siqueira <abel.s.siqueira@gmail.com> and contributors
+CheckExplicitImports: false
+CodeOfConductContact: tangi.migot@gmail.com
+ConfigIndentation: 2
+JuliaIndentation: 2
+JuliaMinCIVersion: lts
+JuliaMinVersion: '1.6'
+License: MPL-2.0
+LicenseCopyrightHolders: Tangi Migot
+MarkdownIndentation: 2
+PackageName: JSOTemplate
+PackageOwner: JuliaSmoothOptimizers
+PackageUUID: adf32eb0-fe7e-47bb-93e4-fe96e72f6839
+RunJuliaNightlyOnCI: false
+StrategyConfirmIncluded: true
+StrategyLevel: 3
+StrategyReviewExcluded: true
+TestingStrategy: basic_auto_discover
+UseCirrusCI: true

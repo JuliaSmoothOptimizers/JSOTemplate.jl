@@ -1,0 +1,12 @@
+name: Template Update
+
+on:
+  schedule:
+    # At 07:00 on the 1st day of every month
+    - cron: "0 7 1 * *"
+  workflow_dispatch:
+
+jobs:
+  template-update:
+    uses: JuliaSmoothOptimizers/.github/.github/workflows/template-update.yml@move-scripts-to-github-JSO
+    # later: @main
