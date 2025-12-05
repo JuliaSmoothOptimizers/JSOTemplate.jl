@@ -38,4 +38,3 @@ StrategyLevel: 3
 StrategyReviewExcluded: true
 TestingStrategy: basic_auto_discover
 UseCirrusCI: true
-_src_path: C:\Users\tangi\.julia\packages\BestieTemplate\53KEa
