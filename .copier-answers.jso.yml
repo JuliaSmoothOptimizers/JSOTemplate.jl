@@ -3,6 +3,14 @@ PackageOwner: "JuliaSmoothOptimizers"
 PackageUUID: "adf32eb0-fe7e-47bb-93e4-fe96e72f6839"
 _src_path: "https://github.com/JuliaSmoothOptimizers/JSOBestieTemplate.jl"
 _commit: "v0.13.0"
-AddBreakage: true
-AddBenchmark: false
-AddBenchmarkCI: true
+include_breakage: true
+include_compathelper: true
+include_copier_update: false # only true for JSOTemplate/.github
+include_invalidations: true
+include_lint: true
+include_precommit_update: true
+include_test: true
+include_test_prs: true
+include_docs: true
+include_tagbot: true
+include_codecov: true

@@ -1,0 +1,82 @@
+_answers_file: .copier-answers.jso.yml
+data:
+  template_version: "{{ _commit }}"
+questions:
+  include_breakage:
+    type: bool
+    default: true
+    help: "Include Breakage workflow?"
+
+  include_compathelper:
+    type: bool
+    default: true
+
+  include_copier_update:
+    type: bool
+    default: false
+
+  include_invalidations:
+    type: bool
+    default: true
+
+  include_lint:
+    type: bool
+    default: true
+
+  include_precommit_update:
+    type: bool
+    default: true
+
+  include_test:
+    type: bool
+    default: true
+
+  include_test_prs:
+    type: bool
+    default: true
+
+  include_docs:
+    type: bool
+    default: true
+
+  include_tagbot:
+    type: bool
+    default: true
+
+  include_codecov:
+    type: bool
+    default: true
+
+templates:
+  .github/workflows/Breakage.yml:
+    when: "{{ include_breakage }}"
+
+  .github/workflows/CompatHelper.yml:
+    when: "{{ include_compathelper }}"
+
+  .github/workflows/Copier.yml:
+    when: "{{ include_copier_update }}"
+
+  .github/workflows/Invalidations.yml:
+    when: "{{ include_invalidations }}"
+
+  .github/workflows/Lint.yml:
+    when: "{{ include_lint }}"
+
+  .github/workflows/PrecommitUpdate.yml:
+    when: "{{ include_precommit_update }}"
+
+  .github/workflows/Test.yml:
+    when: "{{ include_test }}"
+
+  .github/workflows/TestOnPRs.yml:
+    when: "{{ include_test_prs }}"
+
+  .github/workflows/Docs.yml:
+    when: "{{ include_docs }}"
+
+  .github/workflows/TagBot.yml:
+    when: "{{ include_tagbot }}"
+
+  codecov.yml:
+    when: "{{ include_codecov }}"
