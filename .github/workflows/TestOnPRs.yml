@@ -18,7 +18,7 @@ concurrency:
 
 jobs:
   test:
-    uses: ./.github/workflows/ReusableTest.yml
+    uses: JuliaSmoothOptimizers/.github/.github/workflows/ReusableTest.yml@move-scripts-to-github-JSO
     with:
       os: ubuntu-latest
       version: "1"

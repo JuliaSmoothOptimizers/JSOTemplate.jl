@@ -9,7 +9,7 @@ on:
 
 jobs:
   test:
-    uses: ./.github/workflows/ReusableTest.yml
+    uses: JuliaSmoothOptimizers/.github/.github/workflows/ReusableTest.yml@move-scripts-to-github-JSO
     with:
       os: ${{ matrix.os }}
       version: ${{ matrix.version }}
@@ -24,12 +24,11 @@ jobs:
         version:
           - "lts"
           - "1"
+          - "pre"
         os:
           - ubuntu-latest
           - macOS-latest
-
           - windows-latest
-
         arch:
           - x64
         allow_failure: [false]

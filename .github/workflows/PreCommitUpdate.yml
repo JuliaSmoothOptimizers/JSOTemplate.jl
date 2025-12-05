@@ -7,34 +7,5 @@ on:
 
 jobs:
   pre-commit-update:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Hack for setup-python cache # https://github.com/actions/setup-python/issues/807
-        run: touch requirements.txt
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          cache: pip
-          python-version: "3.11"
-      - name: Hack for setup-python cache # https://github.com/actions/setup-python/issues/807
-        run: rm requirements.txt
-      - name: Install pre-commit
-        run: pip install pre-commit
-      - name: Run pre-commit's autoupdate
-        run: |
-          # ignore exit code
-          pre-commit autoupdate || true
-      - name: Create Pull Request
-        id: cpr
-        uses: peter-evans/create-pull-request@v7
-        with:
-          commit-message: "chore: :robot: pre-commit update"
-          title: "[AUTO] pre-commit update"
-          branch: auto-pre-commit-update
-          delete-branch: true
-          labels: chore
-      - name: Check outputs
-        run: |
-          echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
-          echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"
+    uses: JuliaSmoothOptimizers/.github/.github/workflows/PreCommitUpdate.yml@move-scripts-to-github-JSO
+    # later: @main
