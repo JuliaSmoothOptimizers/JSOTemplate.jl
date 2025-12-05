@@ -5,4 +5,4 @@ on:
 
 jobs:
   breakage:
-    uses: JuliaSmoothOptimizers/.github/.github/workflows/breakage.yml@move-scripts-to-github-JSO
+    uses: JuliaSmoothOptimizers/.github/.github/workflows/Breakage.yml@move-scripts-to-github-JSO
